@@ -1,0 +1,39 @@
+<html>
+	{% include "univheader.html" %}
+
+	{% block content %}
+	<body>
+		<div class="header2">
+			Reservation added.
+
+			Click <a href= "/home/">here</a> to return to the home page.
+		</div>
+		<div>
+			<a>do you even go here?</a>
+			<table>
+			<thead>
+				<tr>
+			        <th>Name: </th>
+			        <th>email: </th>
+			        <th>blah: </th>
+		        </tr>
+		    </thead>
+		    <tbody>
+			{% for entry in entries %}
+			<tr>
+					<th> blah blah </th>
+					<th> {{ entry.name }} </th>
+					<th> {{ entry.email }} </th>
+					
+			</tr>
+			{% endfor %}
+		</tbody>
+		</table>
+		</div>
+		<div class = "add">
+			<a href= "/reservHome/addReserv/">Add a reservation</a>
+		</div>
+	</body>
+
+	{% endblock %}
+</html>

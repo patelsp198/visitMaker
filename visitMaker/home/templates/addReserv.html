@@ -1,26 +1,27 @@
 <html>
-	<head>
-	</head>
+    {% include "univheader.html" %}
 	<body>
-		<div class="header">
-			This is the page where you add reservations.
+
+		<div class="header2">
+			This is the page where tour reservations are created.
 		</div>
-		
-		<form action="" method="post">
-    	<label for="name">Enter name: </label>
-     	<input id="name" type="text" name="name_field" value="">
-		</form>
-		<form action="" method="post">
-    	<label for="date">Enter date of reservation (mm/dd/yyyy): </label>
-     	<input id="date" type="text" name="name_field" value="">
-		</form>
-		<form action="" method="post">
-    	<label for="numPeople">Enter how many people will be on the tour (eg: 13): </label>
-     	<input id="numPeople" type="text" name="name_field" value="">
-		</form>
-		<form action="" method="post">
-    	<label for="time">Enter the desired time of tour (eg: 12:43 PM): </label>
-     	<input id="time" type="text" name="name_field" value="">
-		</form>
+
+		<!-- posts error on bad input -->
+		{% if form.errors %}
+        	<p style="color: red;">
+            	Please correct the error{{ form.errors|pluralize }} below.
+        	</p>
+    	{% endif %}
+
+
+    	<!-- uses form fields to request input -->
+    	<form action="" method="post" novalidate>
+        	<table>
+            	{{ form.as_table }}
+        	</table>
+        	{% csrf_token %}
+        	<input name="submit" type="submit" value="Submit">
+    	</form>
+
 	</body>
 </html>
