@@ -1,0 +1,16 @@
+This is SCRUM For Your Life.
+
+-Sheela
+-Jasper
+-Ben
+-Miranda
+...
+
+
+Run Server:
+
+$python manage.py runserver
+
+Test:
+
+$python manage.py test
